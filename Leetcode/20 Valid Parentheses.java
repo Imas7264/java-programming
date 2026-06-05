@@ -61,34 +61,3 @@ class Solution
   return false;
  }
 }
-
-
-// class Solution
-// {
-//  public boolean canJump(int[] nums)
-//  {
-//   boolean result = jump(nums, 0);
-
-//   return result;
-//  }
-
-
-//  static boolean jump(int nums[], int index)
-//  {
-//   if(index == nums.length-1)
-//   {return true;}
-
-//   if(index>=nums.length)
-//   {return true;}
-
-//   int i = nums[index];
-//   boolean result = false;
-//   while(i>0 && !result)
-//   {result = jump(nums, index+i); i--;}
-
-//   if(result)
-//   {return true;}
-
-//   return false;
-//  }
-// }
