@@ -3,33 +3,58 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int[] nums = {1,2,3,4,5,6,7,8};
+  int[][] nums = {{1,3,5}, {7,9,11}};
 
-  System.out.println(obj.findMin(nums));
+  System.out.println(obj.searchMatrix(nums, 3));
  }
 }
 
 
 class Solution
 {
- public int findMin(int[] nums)
+ public boolean searchMatrix(int[][] matrix, int target)
  {
-  if(nums.length == 1)
-  {return nums[0];}
+  int u=0, d=matrix.length-1, l=0, r=matrix[0].length-1, m=(u+d)/2;
+  if(d==0 && r==0)
+  {return (target==matrix[d][r])? true:false;}
 
-  int l=0, h=nums.length-1, m=(l+h)/2;
-
-  while(nums[m]<nums[m+1] && l<h)
+  while(u<d)
   {
-   if(nums[m]<nums[h])
-   {h=m;}
+   if(target == matrix[m][r])
+   {return true;}
+
+   System.out.println("Checked index: "+m+", "+l);
+   
+   if(target<matrix[m][r])
+   {d = m-1;}
    else
-   {l=m;}
-
-   m=(h+l)/2;
+   {u = m+1;}
+   
+   m=(u+d)/2;
   }
+  
+  if(matrix[m][l]==target)
+  {return true;}
+  
+  m=(l+r)/2;
+  while(l<r)
+  {
+   if(target == matrix[u][m])
+   {return true;}
+    
+   System.out.println("Checked index: "+u+", "+m);
+   
+   if(target<matrix[u][m])
+   {r=m-1;}
+   else
+   {l=m+1;}
 
-  return (l<h)? nums[m+1]:nums[m];
+   m=(l+r)/2;
+  }
+  if(matrix[u][m]==target)
+  {return true;}
+  
+  return false;
  }
 }
 

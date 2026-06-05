@@ -31,7 +31,6 @@ public class Test2
    s[j]=temp;
   }
 
-
   for(int i=0; i<s.length; i++)
   {System.out.print(s[i]+" ");}
  }

@@ -4,6 +4,7 @@ New problems:
 2    - Add two numbers
 21   - Merge Two Sorted Lists
 54   - Spiral Matrix
+61   - Rotate List
 151  - Reverse Words in a String
 153  - Find Minimum in Rotated Sorted Array
 380  - Insert Delete GetRandom O(1)
