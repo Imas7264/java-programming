@@ -1,64 +1,30 @@
-import java.util.Stack;
-
 public class Test3
 {
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int[] nums = {1, 5, 10, 1};
+  int[] nums = {1,2};
 
-  System.out.println(obj.isValid("()()(())"));
+  System.out.println(obj.reverseBits(2147483644));
  }
 }
 
 
 class Solution
 {
- public boolean isValid(String s1)
+ public int reverseBits(int n)
  {
-  Stack<Character> stack = new Stack<>();
-  for(int i=0; i<s1.length(); i++)
+  int ans=0, carry, i=32;
+  while(i>0)
   {
-   if(s1.charAt(i)=='(' || s1.charAt(i)=='{' || s1.charAt(i)=='[')
-   {stack.push(s1.charAt(i));}
-   else
-   {
-    if(stack.empty())
-    {return false;}
-
-    switch(s1.charAt(i))
-    {
-     case ')':
-     {
-      if(stack.peek() != '(')
-      {return false;}
-      stack.pop();
-      break;
-     }
-
-     case '}':
-     {
-      if(stack.peek() != '{')
-      {return false;}
-      stack.pop();
-      break;
-     }
-
-     case ']':
-     {
-      if(stack.peek() != '[')
-      {return false;}
-      stack.pop();
-      break;
-     }
-    }
-   }
+   carry=n&1;
+   ans = ans<<1;
+   ans = ans | carry;
+   n = n>>1;
+   i--;
   }
 
-  if(stack.empty())
-  {return true;}
-
-  return false;
+  return ans;
  }
 }
 
