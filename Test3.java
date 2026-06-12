@@ -5,27 +5,43 @@ public class Test3
   Solution obj = new Solution();
   int[] nums = {4,1,2,1,2,2,1};
 
-  System.out.println(obj.singleNumber(nums));
+  System.out.println(obj.trailingZeroes(100));
  }
 }
-
 
 class Solution
 {
- public int singleNumber(int[] nums)
+ public int trailingZeroes(int n)
  {
-  int sum1=0, sum2=0;
-  for(int i : nums)
-  {sum1 = sum1^i; sum2 += i;}
+  int i=n, j=5, count=0;
 
-  // for(int i=0; i<nums.length; i++)
-  // {nums[i] = nums[i]sum; System.out.println(nums[i]);}
+  while(i/j != 0)
+  {
+   count += i/j;
+   j *= 5;
+  }
 
-
-
-  return sum2-sum1;
+  return count;
  }
 }
+
+
+// class Solution
+// {
+//  public int singleNumber(int[] nums)
+//  {
+//   int sum1=0, sum2=0;
+//   for(int i : nums)
+//   {sum1 = sum1^i; sum2 += i;}
+
+//   // for(int i=0; i<nums.length; i++)
+//   // {nums[i] = nums[i]sum; System.out.println(nums[i]);}
+
+
+
+//   return sum2-sum1;
+//  }
+// }
 
 
 // class Solution

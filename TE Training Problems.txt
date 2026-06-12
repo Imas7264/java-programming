@@ -8,6 +8,7 @@ New problems:
 136  - Single Number
 151  - Reverse Words in a String
 153  - Find Minimum in Rotated Sorted Array
+172  - Factorial Trailing Zeroes
 380  - Insert Delete GetRandom O(1)
 397  - Integer Replacement
 
