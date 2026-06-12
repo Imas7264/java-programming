@@ -1,64 +1,29 @@
-import java.util.Stack;
-
 public class Test3
 {
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int[] nums = {1, 5, 10, 1};
+  int[] nums = {4,1,2,1,2,2,1};
 
-  System.out.println(obj.isValid("()()(())"));
+  System.out.println(obj.singleNumber(nums));
  }
 }
 
 
 class Solution
 {
- public boolean isValid(String s1)
+ public int singleNumber(int[] nums)
  {
-  Stack<Character> stack = new Stack<>();
-  for(int i=0; i<s1.length(); i++)
-  {
-   if(s1.charAt(i)=='(' || s1.charAt(i)=='{' || s1.charAt(i)=='[')
-   {stack.push(s1.charAt(i));}
-   else
-   {
-    if(stack.empty())
-    {return false;}
+  int sum1=0, sum2=0;
+  for(int i : nums)
+  {sum1 = sum1^i; sum2 += i;}
 
-    switch(s1.charAt(i))
-    {
-     case ')':
-     {
-      if(stack.peek() != '(')
-      {return false;}
-      stack.pop();
-      break;
-     }
+  // for(int i=0; i<nums.length; i++)
+  // {nums[i] = nums[i]sum; System.out.println(nums[i]);}
 
-     case '}':
-     {
-      if(stack.peek() != '{')
-      {return false;}
-      stack.pop();
-      break;
-     }
 
-     case ']':
-     {
-      if(stack.peek() != '[')
-      {return false;}
-      stack.pop();
-      break;
-     }
-    }
-   }
-  }
 
-  if(stack.empty())
-  {return true;}
-
-  return false;
+  return sum2-sum1;
  }
 }
 

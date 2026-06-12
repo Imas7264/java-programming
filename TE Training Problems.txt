@@ -5,6 +5,7 @@ New problems:
 21   - Merge Two Sorted Lists
 54   - Spiral Matrix
 61   - Rotate List
+136  - Single Number
 151  - Reverse Words in a String
 153  - Find Minimum in Rotated Sorted Array
 380  - Insert Delete GetRandom O(1)
@@ -24,6 +25,7 @@ Self Solving Problems:
 28   - Find the Index of the First Occurrence in a String
 58   - Length of Last Word
 169  - Majority Element
+191  - Number of 1 Bits
 485  - Max Consecutive Ones
 744  - Find Smallest Letter Greater Than Target
 
