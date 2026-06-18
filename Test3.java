@@ -5,23 +5,20 @@ public class Test3
   Solution obj = new Solution();
   int[] nums = {4,1,2,1,2,2,1};
 
-  System.out.println(obj.trailingZeroes(100));
+  System.out.println("");
  }
 }
 
 class Solution
 {
- public int trailingZeroes(int n)
+ public int rangeBitwiseAnd(int left, int right)
  {
-  int i=n, j=5, count=0;
+  int i=0;
 
-  while(i/j != 0)
-  {
-   count += i/j;
-   j *= 5;
-  }
+  while(left != right)
+  {left=left>>1; right=right>>1; i++;}
 
-  return count;
+  return right<<i;
  }
 }
 

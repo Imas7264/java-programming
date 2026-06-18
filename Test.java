@@ -16,28 +16,8 @@ class Test
 
 class Solution
 {
- public ListNode reverseList(ListNode head)
+ public boolean hasCycle(ListNode head)
  {
-  if(head == null)
-  {return null;}
-
-  Stack<ListNode> stk = new Stack<>();
-  ListNode temp = head;
-
-  while(temp != null)
-  {
-   stk.push(temp);
-   temp = temp.next;
-  }
-
-  head = stk.pop();
-  head.next = null;
-  temp = head;
   
-  while(!stk.isEmpty())
-  {temp.next = stk.pop(); temp = temp.next;}
-  temp.next = null;
-
-  return head;
  }
 }

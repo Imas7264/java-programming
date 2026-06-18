@@ -10,6 +10,7 @@ New problems:
 153  - Find Minimum in Rotated Sorted Array
 162  - Find Peak Element
 190  - Reverse Bits
+201  - Bitwise AND of Numbers Range
 209  - Minimum Size Subarray Sum
 172  - Factorial Trailing Zeroes
 380  - Insert Delete GetRandom O(1)
