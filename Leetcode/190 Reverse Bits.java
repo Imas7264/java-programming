@@ -9,21 +9,35 @@ public class Test3
  }
 }
 
-
 class Solution
 {
  public int reverseBits(int n)
  {
-  int ans=0, carry, i=32;
-  while(i>0)
+  int ans=0;
+  for(int i=0; i<32; i++)
   {
-   carry=n&1;
-   ans = ans<<1;
-   ans = ans | carry;
+   ans = (ans<<1) | (1&n);
    n = n>>1;
-   i--;
   }
 
   return ans;
  }
 }
+
+// class Solution
+// {
+//  public int reverseBits(int n)
+//  {
+//   int ans=0, carry, i=32;
+//   while(i>0)
+//   {
+//    carry=n&1;
+//    ans = ans<<1;
+//    ans = ans | carry;
+//    n = n>>1;
+//    i--;
+//   }
+
+//   return ans;
+//  }
+// }
