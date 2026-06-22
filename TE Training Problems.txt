@@ -6,6 +6,7 @@ New problems:
 54   - Spiral Matrix
 61   - Rotate List
 136  - Single Number
+141  - Linked List Cycle
 151  - Reverse Words in a String
 153  - Find Minimum in Rotated Sorted Array
 162  - Find Peak Element
