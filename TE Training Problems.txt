@@ -2,6 +2,7 @@ TE Training Problems
 
 New problems:
 2    - Add two numbers
+6    - Zigzag Conversion
 21   - Merge Two Sorted Lists
 54   - Spiral Matrix
 61   - Rotate List
