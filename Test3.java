@@ -1,42 +1,43 @@
+import java.util.*;
+
 public class Test3
 {
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int[] nums = {4,1,2,1,2,2,1};
+  int[] nums = {1};
 
-  System.out.println(obj.convert("PAYPALISHIRING", 4));
+  System.out.println(obj.longestConsecutive(nums));
  }
 }
 
 class Solution
 {
- public String convert(String s, int numRows)
+ public int longestConsecutive(int[] nums)
  {
-  if(numRows == 1)
-  {return s;}
-  
-  int direction=1, ptr=0;
-  StringBuilder mat[] = new StringBuilder[numRows];
-  StringBuilder ans = new StringBuilder();
+  if(nums.length == 0)
+  {return 0;}
 
-  for(int i=0; i<mat.length; i++)
-  {mat[i] = new StringBuilder("");}
+  HashSet<Integer> s = new HashSet<>();
+  for(int i: nums)
+  {s.add(i);}
 
-
-  for(int i=0; i<s.length(); i++)
+  int max=0, count=0;
+  for(int i: s)
   {
-   mat[ptr].append(s.charAt(i));
-   ptr = ptr+direction;
-
-   if(ptr==numRows-1 || ptr==0)
-   {direction = -direction;}
+   if(!s.contains(i-1))
+   {
+    while(s.contains(i+1))
+    {
+     count++;
+     i++;
+    }
+    max = (max<count)?count:max;
+    count=0;
+   }
   }
 
-  for(StringBuilder s1: mat)
-  {ans.append(s1);}
-
-  return ans.toString();
+  return max+1;
  }
 }
 

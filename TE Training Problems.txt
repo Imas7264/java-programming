@@ -6,6 +6,8 @@ New problems:
 21   - Merge Two Sorted Lists
 54   - Spiral Matrix
 61   - Rotate List
+86   - Partition List
+128  - Longest Consecutive Sequence
 136  - Single Number
 141  - Linked List Cycle
 151  - Reverse Words in a String
