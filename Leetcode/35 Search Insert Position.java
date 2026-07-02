@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Test3
 {
  public static void main(String[] args)
@@ -35,20 +33,3 @@ class Solution
   return l;
  }
 }
-
-
-
-// class Solution
-// {
-//  public int singleNumber(int[] nums)
-//  {
-//   int sum1=0, sum2=0;
-//   for(int i : nums)
-//   {sum1 = sum1^i; sum2 += i;}
-
-//   // for(int i=0; i<nums.length; i++)
-//   // {nums[i] = nums[i]sum; System.out.println(nums[i]);}
-
-//   return sum2-sum1;
-//  }
-// }
