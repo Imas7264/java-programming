@@ -3,8 +3,10 @@ TE Training Problems
 New problems:
 2    - Add two numbers
 6    - Zigzag Conversion
+17   - Letter Combinations of a Phone Number
 21   - Merge Two Sorted Lists
 54   - Spiral Matrix
+55   - Jump Game
 61   - Rotate List
 86   - Partition List
 128  - Longest Consecutive Sequence
