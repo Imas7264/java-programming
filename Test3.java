@@ -5,9 +5,9 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int nums[] = {1,3,5,6};
+  int nums[] = {1, 2, 3, 4};
 
-  System.out.println(obj.searchInsert(nums, 2));
+  System.out.println(obj.containsNearbyDuplicate(nums, 2));
  }
 }
 
@@ -15,26 +15,46 @@ public class Test3
 
 class Solution
 {
- public int searchInsert(int[] nums, int target)
+ public boolean containsNearbyDuplicate(int[] nums, int k)
  {
-  int l=0, h=nums.length-1, m=(l+h)/2;
+  if(k==0)
+  {return false;}
+  
+  HashSet<Integer> window = new HashSet<>();
 
-  while(l<=h)
+  for(int i=0; i<nums.length; i++)
   {
-   if(nums[m] == target)
-   {return m;}
-   
-   if(nums[m] > target)
-   {h=m-1;}
-   else
-   {l=m+1;}
+   if(window.contains(nums[i]))
+   {return true;}
 
-   m = (l+h)/2;
+   if(window.size() == k)
+   {window.remove(nums[i-k]);}
+
+   window.add(nums[i]);
   }
 
-  return l;
+  return false;
  }
 }
+
+
+
+// class Solution
+// {
+//  public boolean containsNearbyDuplicate(int[] nums, int k)
+//  {
+//   for(int i=0; i<nums.length; i++)
+//   {
+//    for(int j=i+1; j<=i+k && j<nums.length; j++)
+//    {
+//     if(nums[i] == nums[j])
+//     {return true;}
+//    }
+//   }
+
+//   return false;
+//  }
+// }
 
 
 
