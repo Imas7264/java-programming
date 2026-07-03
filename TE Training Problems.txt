@@ -17,9 +17,10 @@ New problems:
 153  - Find Minimum in Rotated Sorted Array
 162  - Find Peak Element
 190  - Reverse Bits
+172  - Factorial Trailing Zeroes
 201  - Bitwise AND of Numbers Range
 209  - Minimum Size Subarray Sum
-172  - Factorial Trailing Zeroes
+219  - Contains Duplicate II
 380  - Insert Delete GetRandom O(1)
 397  - Integer Replacement
 
@@ -40,6 +41,7 @@ Self Solving Problems:
 58   - Length of Last Word
 169  - Majority Element
 191  - Number of 1 Bits
+242  - Valid Anagram
 485  - Max Consecutive Ones
 744  - Find Smallest Letter Greater Than Target
 
