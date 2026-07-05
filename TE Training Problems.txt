@@ -21,6 +21,7 @@ New problems:
 201  - Bitwise AND of Numbers Range
 209  - Minimum Size Subarray Sum
 219  - Contains Duplicate II
+274  - H-Index
 380  - Insert Delete GetRandom O(1)
 397  - Integer Replacement
 
