@@ -22,6 +22,8 @@ class Solution
   
   int latest=nums[0], count=1, k=0;
 
+
+  
   for(int i=1; i<nums.length; i++)
   {
    if(nums[i] != latest)
