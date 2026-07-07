@@ -12,24 +12,46 @@ public class Test3
 }
 
 
-class Solution
+
+class Solution 
 {
  public int[] twoSum(int[] nums, int target)
  {
   int[] r = {0, 0};
+  HashMap<Integer, Integer> map = new HashMap<>();
 
   for(int i=0; i<nums.length; i++)
   {
-   for(int j=i+1; j<nums.length; j++)
-   {
-    if(nums[i]+nums[j] == target)
-    {
-     r[0] = i;
-     r[1] = j;
-     return r;
-    }
-   }
+   if(map.containsKey(target-nums[i]))
+   {r[0]=map.get(target-nums[i]); r[1]=i; return r;}
+
+   map.put(nums[i], i);
   }
+  
   return r;
  }
 }
+
+
+
+// class Solution
+// {
+//  public int[] twoSum(int[] nums, int target)
+//  {
+//   int[] r = {0, 0};
+
+//   for(int i=0; i<nums.length; i++)
+//   {
+//    for(int j=i+1; j<nums.length; j++)
+//    {
+//     if(nums[i]+nums[j] == target)
+//     {
+//      r[0] = i;
+//      r[1] = j;
+//      return r;
+//     }
+//    }
+//   }
+//   return r;
+//  }
+// }

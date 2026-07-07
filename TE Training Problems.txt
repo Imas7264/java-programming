@@ -5,6 +5,7 @@ New problems:
 6    - Zigzag Conversion
 17   - Letter Combinations of a Phone Number
 21   - Merge Two Sorted Lists
+46   - Permutations
 54   - Spiral Matrix
 55   - Jump Game
 61   - Rotate List

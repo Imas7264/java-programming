@@ -5,68 +5,36 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int nums[] = {3,0,6,1,5};
+  int nums[] = {3,3};
+  int ans[] = obj.twoSum(nums, 6);
 
-  System.out.println(obj.hIndex(nums));
+  for(int i: ans)
+  {System.out.print(i+" ");}
+
+  // System.out.println(obj.twoSum(nums, 9));
  }
 }
 
 
 
-class Solution
+class Solution 
 {
- public int hIndex(int[] citations)
+ public int[] twoSum(int[] nums, int target)
  {
-  int cited[] = new int[citations.length + 1];
+  int[] r = {0, 0};
+  HashMap<Integer, Integer> map = new HashMap<>();
 
-  for(int i=0; i<citations.length; i++)
+  for(int i=0; i<nums.length; i++)
   {
-   if(citations[i] >= citations.length)
-   {cited[citations.length]++;}
-   else
-   {cited[citations[i]]++;}
-  }
+   if(map.containsKey(target-nums[i]))
+   {r[0]=map.get(target-nums[i]); r[1]=i; return r;}
 
-  for(int i=cited.length-1; i>0; i--)
-  {
-   if(cited[i]>=i)
-   {return i;}
-   else
-   {cited[i-1] += cited[i];}
+   map.put(nums[i], i);
   }
-
-  return 0;
+  
+  return r;
  }
 }
-
-
-
-
-// class Solution
-// {
-//  public int hIndex(int[] citations)
-//  {
-//   int papers, cited=0;
-
-//   for(int i=citations.length; i>0; i--)
-//   {
-//    papers = i;
-
-//    for(int j=0; j<citations.length && cited<papers; j++)
-//    {
-//     if(citations[j] >= papers)
-//     {cited++;}
-//    }
-
-//    if(cited>=papers)
-//    {return papers;}
-
-//    cited=0;
-//   }
-
-//   return 0;
-//  }
-// }
 
 
 
