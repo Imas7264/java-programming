@@ -5,13 +5,13 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int nums[] = {3,3};
-  int ans[] = obj.twoSum(nums, 6);
+  int nums[] = {2,0,2,1,1,0};
+  // int ans[] = obj.twoSum(nums, 6);
 
-  for(int i: ans)
-  {System.out.print(i+" ");}
-
-  // System.out.println(obj.twoSum(nums, 9));
+  // for(int i: ans)
+  // {System.out.print(i+" ");}
+  obj.sortColors(nums);
+  // System.out.println(obj.sortColors(nums));
  }
 }
 
@@ -19,20 +19,42 @@ public class Test3
 
 class Solution 
 {
- public int[] twoSum(int[] nums, int target)
+ public void sortColors(int[] nums)
  {
-  int[] r = {0, 0};
-  HashMap<Integer, Integer> map = new HashMap<>();
+  int l=0, h=nums.length-1, temp;
 
-  for(int i=0; i<nums.length; i++)
+  while(l<h)
   {
-   if(map.containsKey(target-nums[i]))
-   {r[0]=map.get(target-nums[i]); r[1]=i; return r;}
+   while(l<h && nums[l] < 2)
+   {l++;}
 
-   map.put(nums[i], i);
+   while(l<h && nums[h] == 2)
+   {h--;}
+
+   temp = nums[l];
+   nums[l] = nums[h];
+   nums[h] = temp;
+   l++; h--;
   }
-  
-  return r;
+
+  l=0; h=nums.length-1;
+
+  while(l<h)
+  {
+   while(l<h && nums[l] == 0)
+   {l++;}
+
+   while(l<h && nums[h] > 0)
+   {h--;}
+
+   temp = nums[l];
+   nums[l] = nums[h];
+   nums[h] = temp;
+   l++; h--;
+  }
+
+  // for(int i: nums)
+  // {System.out.println(i+" ");}
  }
 }
 

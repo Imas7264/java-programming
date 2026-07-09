@@ -9,6 +9,7 @@ New problems:
 54   - Spiral Matrix
 55   - Jump Game
 61   - Rotate List
+75   - Sort Colors
 77   - Combinations
 86   - Partition List
 128  - Longest Consecutive Sequence
