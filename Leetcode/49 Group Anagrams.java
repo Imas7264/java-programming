@@ -47,34 +47,3 @@ class Solution
   return new ArrayList<>(map.values());
  }
 }
-
-
-
-// class Solution 
-// {
-//  List<List<String>> answer = new ArrayList<>();
-
-//  public List<List<String>> groupAnagrams(String[] strs)
-//  {
-//   int[] alpha = new int[26];
-//   HashMap<ArrayList<Integer>, List<String>> map = new HashMap<>();
-
-//  }
-// }
-
-
-
-// class Solution
-// {
-//  public int singleNumber(int[] nums)
-//  {
-//   int sum1=0, sum2=0;
-//   for(int i : nums)
-//   {sum1 = sum1^i; sum2 += i;}
-
-//   // for(int i=0; i<nums.length; i++)
-//   // {nums[i] = nums[i]sum; System.out.println(nums[i]);}
-
-//   return sum2-sum1;
-//  }
-// }
