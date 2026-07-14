@@ -5,13 +5,13 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int nums[] = {2,0,2,1,1,0};
+  int nums[] = {5,-3,5};
   String strs[] = {""};
 
   // for(int i: ans)
   // {System.out.print(i+" ");}
   // obj.sortColors(nums);
-  System.out.println(obj.groupAnagrams(strs));
+  System.out.println(obj.maxSubArray(nums));
   // System.out.println(map.get("abc"));
  }
 }
@@ -20,31 +20,25 @@ public class Test3
 
 class Solution 
 {
- public List<List<String>> groupAnagrams(String[] strs)
+ public int maxSubArray(int[] nums)
  {
-  HashMap<String, List<String>> map = new HashMap<>();
+  int max=Integer.MIN_VALUE, cmax=0, current=0;
 
-  for(int i=0; i<strs.length; i++)
+  for(int i=0, j=0; j<2*nums.length-1; i=(i+1)%nums.length, j++)
   {
-   int[] alpha = new int[26];
-   
-   for(int j=0; j<strs[i].length(); j++)
-   {alpha[(strs[i].charAt(j) - 'a')]++;}
-   
-   StringBuilder sb = new StringBuilder("");
-   
-   for(int j: alpha)
-   {sb.append(j); sb.append('-');}
+   cmax += nums[i];
 
-   String key = sb.toString();
+   if(max < cmax)
+   {max = cmax;}
+   
+   if(cmax<0)
+   {cmax = 0; current=(i+1)%nums.length;}
 
-   if(!map.containsKey(key))
-   {map.put(key, new ArrayList<String>());}
-
-   map.get(key).add(strs[i]);
+   if((j+1)%nums.length == current)
+   {break;}
   }
 
-  return new ArrayList<>(map.values());
+  return max;
  }
 }
 
