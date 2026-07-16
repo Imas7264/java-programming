@@ -1,5 +1,16 @@
 Java Syntax:
 
+MAIN TEMPLATE
+class FileName
+{
+ public static void main(String args[])
+ {
+  body;
+ }
+}
+
+
+
 KEYWORDS
 break;
 continue;
