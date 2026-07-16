@@ -1,0 +1,87 @@
+Java Syntax:
+
+KEYWORDS
+break;
+continue;
+return;
+new;
+this;
+
+
+
+VARIABLE
+DataType variableName; // Declaration
+DataType variableName = value; // Declaration & initialization
+
+
+
+IF, IF-ELSE, IF-ELSE-IF
+if(condition) {body;}
+
+if(condition)
+{if-body;}
+else
+{else-body;}
+
+if(condition)
+{if-body;}
+else if(condition)
+{else-if-body;}
+
+
+
+SWITCH
+switch(value)
+{
+ case value1: {body; break;}
+ case value2: {body; break;}
+ default: {body;} // Optional but preferred
+}
+
+
+
+FOR LOOP
+for(initialization; condition; updation) // Traditional
+{body;}
+
+for(DataType variable: collection) //For-each loop (for arrays & iterable collections only)
+{body;}
+
+
+
+WHILE LOOP & DO-WHILE LOOP
+while(condition)
+{
+ body;
+ updation;
+}
+
+do
+{
+ body;
+ updation;
+}while(condition);
+
+
+
+ARRAY
+DataType arrayName[] = new DataType[size]; // Declaration
+DataType arrayName[] = {elements}; // Declaration & initialization
+arrayName[index]; // Accessing element
+arrayName.length; // Array Length
+
+
+METHOD
+ReturnType methodName(parameters)
+{body;}
+
+
+
+CLASS
+class ClassName
+{members;}
+
+
+
+OBJECT
+ClassName objectName = new ClassName();
