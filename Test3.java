@@ -5,42 +5,68 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int nums[] = {5,-3,5};
+  int nums[] = {1,1,2};
   String strs[] = {""};
 
-  // for(int i: ans)
+  // for(int i: obj.countOddEven(nums))
   // {System.out.print(i+" ");}
   // obj.sortColors(nums);
-  System.out.println(obj.maxSubArray(nums));
+  System.out.println(obj.secondSmallest(nums));
   // System.out.println(map.get("abc"));
  }
 }
 
 
 
-class Solution 
+class Solution
 {
- public int maxSubArray(int[] nums)
+ int secondSmallest(int[] nums)
  {
-  int max=Integer.MIN_VALUE, cmax=0, current=0;
+  if(nums.length <= 1)
+  {return -1;}
 
-  for(int i=0, j=0; j<2*nums.length-1; i=(i+1)%nums.length, j++)
+  int min=Integer.MAX_VALUE, min2=Integer.MAX_VALUE;
+
+  for(int i=0; i<nums.length; i++)
   {
-   cmax += nums[i];
-
-   if(max < cmax)
-   {max = cmax;}
-   
-   if(cmax<0)
-   {cmax = 0; current=(i+1)%nums.length;}
-
-   if((j+1)%nums.length == current)
-   {break;}
+   if(min>nums[i])
+   {
+    min2=min;
+    min=nums[i];
+   }
+   else if(nums[i]<min2 && nums[i] != min)
+   {min2=nums[i];}
   }
 
-  return max;
+  return (min2 == Integer.MAX_VALUE)? -1: min2;
  }
 }
+
+
+
+// class Solution 
+// {
+//  public int maxSubArray(int[] nums)
+//  {
+//   int max=Integer.MIN_VALUE, cmax=0, current=0;
+
+//   for(int i=0, j=0; j<2*nums.length-1; i=(i+1)%nums.length, j++)
+//   {
+//    cmax += nums[i];
+
+//    if(max < cmax)
+//    {max = cmax;}
+   
+//    if(cmax<0)
+//    {cmax = 0; current=(i+1)%nums.length;}
+
+//    if((j+1)%nums.length == current)
+//    {break;}
+//   }
+
+//   return max;
+//  }
+// }
 
 
 
