@@ -20,6 +20,17 @@ this;
 
 
 
+NOMENCLATURE
+PascalCase : classes, constructors 
+camelCase  : methods, variables, objects
+
+method: abc()
+object: abc.
+variable: abc
+constructor: Abc()
+
+
+
 VARIABLE
 DataType variableName; // Declaration
 DataType variableName = value; // Declaration & initialization
@@ -96,3 +107,13 @@ class ClassName
 
 OBJECT
 ClassName objectName = new ClassName();
+
+
+
+
+
+
+
+
+
+
