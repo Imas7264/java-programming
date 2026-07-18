@@ -13,6 +13,7 @@ New problems:
 61   - Rotate List
 75   - Sort Colors
 77   - Combinations
+82   - Remove Duplicates from Sorted List II
 83   - Remove Duplicates from Sorted List
 86   - Partition List
 128  - Longest Consecutive Sequence

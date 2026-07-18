@@ -47,3 +47,38 @@ class Solution
   return head.next;
  }
 }
+
+
+
+// class Solution
+// {
+//  public ListNode deleteDuplicates(ListNode head)
+//  {
+//   if(head == null)
+//   {return null;}
+
+//   ListNode dummy = new ListNode(-150, head);
+//   head = dummy;
+//   ListNode temp=head, temp2=head.next;
+//   int current = temp.val;
+
+//   while(temp2 != null)
+//   {
+//    if(temp2.val == current)
+//    {temp2 = temp2.next;}
+//    else if(temp2.next != null && temp2.val == temp2.next.val)
+//    {current = temp2.val;}
+//    else
+//    {
+//     temp.next = temp2;
+//     temp = temp.next;
+//     current = temp.val;
+//     temp2 = temp2.next;
+//    }
+//   }
+
+//   temp.next = null;
+
+//   return head.next;
+//  }
+// }

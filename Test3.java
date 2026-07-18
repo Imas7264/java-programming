@@ -4,15 +4,12 @@ public class Test3
 {
  public static void main(String[] args)
  {
-  Solution obj = new Solution();
-  int nums[] = {1,1,2};
-  String strs[] = {""};
+  SecondClass obj = new SecondClass();
 
-  // for(int i: obj.countOddEven(nums))
-  // {System.out.print(i+" ");}
-  // obj.sortColors(nums);
-  System.out.println(obj.secondSmallest(nums));
-  // System.out.println(map.get("abc"));
+  int nums[] = obj.ones(5);
+
+  for(int i=0; i<nums.length; i++)
+  {System.out.print(nums[i]+" ");}
  }
 }
 
@@ -20,27 +17,28 @@ public class Test3
 
 class Solution
 {
- int secondSmallest(int[] nums)
+ int[] countOddEven(int nums[])
  {
-  if(nums.length <= 1)
-  {return -1;}
-
-  int min=Integer.MAX_VALUE, min2=Integer.MAX_VALUE;
+  int[] ans = new int[2];
 
   for(int i=0; i<nums.length; i++)
   {
-   if(min>nums[i])
-   {
-    min2=min;
-    min=nums[i];
-   }
-   else if(nums[i]<min2 && nums[i] != min)
-   {min2=nums[i];}
+   if(nums[i]%2 == 0)
+   {ans[1]++;}
+   else
+   {ans[0]++;}
   }
 
-  return (min2 == Integer.MAX_VALUE)? -1: min2;
+  return ans;
  }
 }
+
+
+
+// class Solution
+// {
+ 
+// }
 
 
 
