@@ -32,9 +32,6 @@ class Solution
   if(soFar.size() == k)
   {answer.add(new ArrayList<>(soFar)); return;}
 
-  if(n-(k-soFar.size()) < 0)
-  {return;}
-
   for(int j=i; n-j >= k-soFar.size()-1; j++)
   {
    soFar.add(j);

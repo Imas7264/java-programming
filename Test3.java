@@ -15,29 +15,12 @@ public class Test3
 
 
 
-class Solution
-{
- int[] countOddEven(int nums[])
- {
-  int[] ans = new int[2];
-
-  for(int i=0; i<nums.length; i++)
-  {
-   if(nums[i]%2 == 0)
-   {ans[1]++;}
-   else
-   {ans[0]++;}
-  }
-
-  return ans;
- }
-}
-
-
-
 // class Solution
 // {
- 
+//  void reverseStack(Stack<Integer> stk)
+//  {
+//   int 
+//  }
 // }
 
 
