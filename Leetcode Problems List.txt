@@ -28,6 +28,7 @@ New problems:
 122  - Best time to buy & sell stock 2
 128  - Longest Consecutive Sequence
 136  - Single Number
+138  - Copy List with Random Pointer
 141  - Linked List Cycle
 150  - Evaluate reverse polish notation
 151  - Reverse Words in a String
@@ -49,6 +50,7 @@ New problems:
 397  - Integer Replacement
 509  - Fibonacci Number
 622  - Design a circular queue
+724  - Find Pivot Index
 2022 - Convert 1D array to 2D array
 
 Pending problems:

@@ -5,130 +5,55 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  System.out.println(obj.canConstruct("ab", "aab"));
+  int nums[] = {2,-1,1};
+  System.out.println(obj.pivotIndex(nums));
  }
 }
 
 
 
-class Solution
+class Solution 
 {
- public boolean canConstruct(String ransomNote, String magazine)
+ public int pivotIndex(int[] nums)
  {
-  if(magazine.length() < ransomNote.length())
-  {return false;}
+  int totalSum=0, sum=0;
 
-  int freq[] = new int[26];
+  for(int i=0; i<nums.length; i++)
+  {totalSum += nums[i];}
 
-  for(int i=0; i<magazine.length(); i++)
+  for(int i=0; i<nums.length; i++)
   {
-   char c = magazine.charAt(i);
+   if(sum == totalSum-sum-nums[i])
+   {return i;}
 
-   freq[c-'a']++;
+   sum += nums[i];
   }
 
-  for(int i=0; i<ransomNote.length(); i++)
-  {
-   char c = ransomNote.charAt(i);
-
-   freq[c-'a']--;
-
-   if(freq[c-'a'] < 0)
-   {return false;}
-  }
-
-  return true;
+  return -1;
  }
 }
 
 
 
-// Optimal time complexity, accepted, but less efficient compared to other solutions
-// class Solution
-// {
-//  public boolean canConstruct(String ransomNote, String magazine)
-//  {
-//   if(magazine.length() < ransomNote.length())
-//   {return false;}
-
-//   HashMap<Character, Integer> map = new HashMap<>();
-
-//   for(int i=0; i<magazine.length(); i++)
-//   {
-//    char c = magazine.charAt(i);
-
-//    if(map.containsKey(c))
-//    {map.put(c, map.get(c)+1);}
-//    else
-//    {map.put(c, 1);}
-//   }
-
-//   for(int i=0; i<ransomNote.length(); i++)
-//   {
-//    char c = ransomNote.charAt(i);
-
-//    if(!map.containsKey(c))
-//    {return false;}
-//    else
-//    {
-//     map.put(c, map.get(c)-1);
-    
-//     if(map.get(c) < 0)
-//     {return false;}
-//    }
-//   }
-
-//   return true;
-//  }
-// }
-
-
-
-// class Solution
-// {
-//  void reverseStack(Stack<Integer> stk)
-//  {
-//   int 
-//  }
-// }
-
-
-
+// Optimal runtime but non-optimal space complexities, accepted, uses O(n) space but can be solved in O(1)
 // class Solution 
 // {
-//  public int maxSubArray(int[] nums)
+//  public int pivotIndex(int[] nums)
 //  {
-//   int max=Integer.MIN_VALUE, cmax=0, current=0;
+//   int preSum[] = new int[nums.length], sum=0, pivot=-1;
 
-//   for(int i=0, j=0; j<2*nums.length-1; i=(i+1)%nums.length, j++)
+//   for(int i=1; i<nums.length; i++)
+//   {preSum[i] = nums[i-1]+preSum[i-1];}
+
+//   for(int i=nums.length-1; i>-1; i--)
 //   {
-//    cmax += nums[i];
+//    if(preSum[i] == sum)
+//    {pivot = i;}
 
-//    if(max < cmax)
-//    {max = cmax;}
-   
-//    if(cmax<0)
-//    {cmax = 0; current=(i+1)%nums.length;}
-
-//    if((j+1)%nums.length == current)
-//    {break;}
+//    sum += nums[i];
 //   }
 
-//   return max;
-//  }
-// }
-
-
-
-// class Solution 
-// {
-//  List<List<String>> answer = new ArrayList<>();
-
-//  public List<List<String>> groupAnagrams(String[] strs)
-//  {
-//   int[] alpha = new int[26];
-//   HashMap<ArrayList<Integer>, List<String>> map = new HashMap<>();
-
+//   return pivot;
 //  }
 // }
 
