@@ -4,7 +4,6 @@ New problems:
 2    - Add two numbers
 3    - Longest common substring without repeating characters
 6    - Zigzag Conversion
-11   - Container with most water
 14   - Longest common prefix
 15   - 3Sum
 17   - Letter Combinations of a Phone Number
@@ -12,7 +11,6 @@ New problems:
 20   - Valid Parentheses
 21   - Merge Two Sorted Lists
 46   - Permutations
-48   - Rotate Image
 49   - Group Anagrams
 53   - Maximum Subarray
 54   - Spiral Matrix
@@ -23,8 +21,6 @@ New problems:
 82   - Remove Duplicates from Sorted List II
 83   - Remove Duplicates from Sorted List
 86   - Partition List
-88   - Merge sorted array
-121  - Best time to buy & sell stock
 122  - Best time to buy & sell stock 2
 128  - Longest Consecutive Sequence
 136  - Single Number
@@ -34,45 +30,51 @@ New problems:
 151  - Reverse Words in a String
 153  - Find Minimum in Rotated Sorted Array
 155  - Min Stack
-162  - Find Peak Element
 172  - Factorial Trailing Zeroes
 190  - Reverse Bits
 201  - Bitwise AND of Numbers Range
+205  - Isomorphic Strings
 206  - Reverse Linked List
 209  - Minimum Size Subarray Sum
 219  - Contains Duplicate II
 231  - Power of Two
 258  - Add digits
 274  - H-Index
-344  - Reverse string
+283  - Move Zeroes
 371  - Sum of two integers
 380  - Insert Delete GetRandom O(1)
 397  - Integer Replacement
 509  - Fibonacci Number
 622  - Design a circular queue
-724  - Find Pivot Index
 2022 - Convert 1D array to 2D array
+2095 - Delete the Middle Node of a Linked List
 
 Pending problems:
 26   - Remove Duplicates from Sorted Array
+48   - Rotate Image
 75   - Sort Colours
 
 Completed problems:
 1    - Two Sum
+11   - Container with most water
 
 Homework Problems:
 27   - Remove Element 
+35   - Search Insert Position
 66   - Plus one
 80   - Remove Duplicates from Sorted Array II
+88   - Merge sorted array
+121  - Best time to buy & sell stock
+162  - Find Peak Element
 167  - Two sum II
-
+169  - Majority Element
+344  - Reverse string
+724  - Find Pivot Index
  
 Self Solving Problems:
 7    - Reverse Integer
 28   - Find the Index of the First Occurrence in a String
-35   - Search Insert Position
 58   - Length of Last Word
-169  - Majority Element
 191  - Number of 1 Bits
 242  - Valid Anagram
 383  - Ransom Note
