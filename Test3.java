@@ -6,10 +6,7 @@ public class Test3
  {
   Solution obj = new Solution();
   int nums[] = {0,2,3,4,5,0,0,0,9};
-  obj.moveZeroes(nums);
-
-  for(int i: nums)
-  {System.out.println(i+" ");}
+  System.out.println(obj.minFlips(2,6,5,));
  }
 }
 
@@ -17,20 +14,20 @@ public class Test3
 
 class Solution
 {
- public void moveZeroes(int[] nums)
+ public int minFlips(int a, int b, int c)
  {
-  int k=0;
+  int sum = a|b, count=0;
 
-  for(int i=0; i<nums.length; i++)
+  while(sum != c)
   {
-   if(nums[i] == 0)
-   {k++;}
-   else
-   {nums[i-k] = nums[i];}
+   if(((sum&1) ^ (c&1)) == 1)
+   {count++;}
+
+   sum = sum>>1;
+   c = c>>1;
   }
 
-  for(int i=nums.length-k; i<nums.length; i++)
-  {nums[i] = 0;}
+  return count;
  }
 }
 
