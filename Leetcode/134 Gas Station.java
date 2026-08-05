@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Test3
 {
  public static void main(String[] args)
@@ -41,17 +39,39 @@ class Solution
 
 
 
+// Brute force approach
 // class Solution
 // {
-//  public int singleNumber(int[] nums)
+//  public int canCompleteCircuit(int[] gas, int[] cost)
 //  {
-//   int sum1=0, sum2=0;
-//   for(int i : nums)
-//   {sum1 = sum1^i; sum2 += i;}
+//   int totalGas=0, totalCost=0;
+  
+//   for(int i=0; i<gas.length; i++)
+//   {totalGas+=gas[i]; totalCost+=cost[i];}
 
-//   // for(int i=0; i<nums.length; i++)
-//   // {nums[i] = nums[i]sum; System.out.println(nums[i]);}
+//   if(totalGas<totalCost)
+//   {return -1;}
 
-//   return sum2-sum1;
+//   int start=0, currentGas=gas[0], i=0, count=0;
+  
+//   while(count<gas.length)
+//   {
+//    currentGas -= cost[i];
+//    i = (i+1)%gas.length;
+
+//    if(currentGas < 0)
+//    {
+//     currentGas = gas[i];
+//     start = i;
+//     count = 0;
+//    }
+//    else
+//    {
+//     currentGas += gas[i];
+//     count++;
+//    }
+//   }
+
+//   return start;
 //  }
 // }
