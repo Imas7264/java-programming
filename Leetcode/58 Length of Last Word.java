@@ -11,42 +11,30 @@ public class Test
 
 
 
-
 class Solution
 {
  public int lengthOfLastWord(String s)
  {
-  int i=0, prev=0, current=0;
-  StringBuilder sb = new StringBuilder("");
+  int count=0, j=s.length()-1;
 
-  while(i<s.length())
+  while(s.charAt(j) == ' ')
+  {j--;}
+
+  for(int i=j; i>-1; i--)
   {
    if(s.charAt(i) == ' ')
-   {
-    if(current>0)
-    {prev = current;}
-
-    current = sb.length();
-    sb.delete(0, sb.length());
-   }
+   {return count;}
    else
-   {sb.append(s.charAt(i));}
-
-   i++;
+   {count++;}
   }
 
-  if(current > 0)
-  {prev = current;}
-
-  current = sb.length();
-
-  if(current == 0)
-  {return prev;}
-  
-  return current;
+  return count;
  }
 }
 
+
+
+// Extra space and also not runtime optimal
 // class Solution
 // {
 //  public int lengthOfLastWord(String s)

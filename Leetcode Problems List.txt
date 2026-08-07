@@ -43,9 +43,11 @@ New problems:
 274  - H-Index
 283  - Move Zeroes
 328  - Odd Even Linked List
+334  - Increasing Triplet Subsequence
 371  - Sum of two integers
 380  - Insert Delete GetRandom O(1)
 397  - Integer Replacement
+443  - String Compression
 509  - Fibonacci Number
 622  - Design a circular queue
 1318 - Minimum Flips to Make a OR b Equal to c
