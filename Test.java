@@ -6,7 +6,6 @@ class Test
  {
   Solution obj1 = new Solution();
   ListNode obj = new ListNode();
-  ListNode l1 = obj.createList(2);
   obj.printLL(obj1.oddEvenList(l1));
  }
 }
