@@ -5,9 +5,9 @@ public class Test3
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int nums[] = {2,2,2,3,3,3};
-  char chars[] = {'a','b','c'};
-  System.out.println(obj.maxOperations(nums, 5));
+  int nums[] = {0,1,1,1,0,1,1,0,1};
+  char chars[] = {'a','b'};
+  System.out.println(obj.longestSubarray(nums));
  }
 }
 
@@ -15,24 +15,28 @@ public class Test3
 
 class Solution
 {
- public int maxOperations(int[] nums, int k)
+ public int longestSubarray(int[] nums)
  {
-  int count = 0, i=0, j=nums.length-1, sum;
-  Arrays.sort(nums);
+  int count=0, prevCount=0, maxCount=0;
 
-  while(i<j)
+  for(int i=0; i<nums.length; i++)
   {
-   sum = nums[i] + nums[j];
-
-   if(sum == k)
-   {count++; i++; j--;}
-   else if(sum<k)
-   {i++;}
+   if(nums[i] == 0)
+   {
+    maxCount = (maxCount<(count+prevCount))? (count+prevCount) : maxCount;
+    prevCount=count;
+    count=0;
+   }
    else
-   {j--;}
+   {count++;}
   }
 
-  return count;
+  maxCount = (maxCount<(count+prevCount))? (count+prevCount) : maxCount;
+
+  if(maxCount == nums.length)
+  {return nums.length-1;}
+
+  return maxCount;
  }
 }
 
