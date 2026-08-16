@@ -50,7 +50,9 @@ New problems:
 397  - Integer Replacement
 443  - String Compression
 509  - Fibonacci Number
+560  - Subarray Sum Equals K
 622  - Design a circular queue
+1004 - Max Consecutive Ones III
 1318 - Minimum Flips to Make a OR b Equal to c
 1493 - Longest Subarray of 1's After Deleting One Element
 1679 - Max Number of K-Sum Pairs
