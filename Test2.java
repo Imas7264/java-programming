@@ -5,9 +5,12 @@ class Test2
  public static void main(String[] args)
  {
   Solution obj = new Solution();
-  int arr[] = {1,1,1,1,1};
+  int arr[] = {73,74,75,71,69,72,76,73};
   
-  System.out.println(obj.longestOnes(arr, 2));
+  for(int i: obj.dailyTemperatures(arr))
+  {System.out.print(i+" ");}
+
+  // System.out.println(obj.dailyTemperatures(arr, 2));
  }
 }
 
@@ -15,30 +18,27 @@ class Test2
 
 class Solution
 {
- public int longestOnes(int[] nums, int k)
+ public int[] dailyTemperatures(int[] temperatures)
  {
-  int l=0, r=0, maxOnes=0, count=0;
+  int i = temperatures.length-1;
+  int[] monoStack = new int[i+1];
+  int top = -1;
+  int[] answer = new int[i+1];
 
-  while(l<nums.length && r<nums.length)
+  while(i>-1)
   {
-   if(nums[r] == 0)
-   {count++;}
-   r++;
+   while(top != -1 && (temperatures[monoStack[top]] <= temperatures[i]))
+   {top--;}
 
-   if(count<=k)
-   {
-    // System.out.println(l+" "+r+" "+(r-l));
-    maxOnes = (maxOnes < r-l)? r-l : maxOnes;
-   }
-   
-   if(count>k)
-   {
-    while(l<nums.length && nums[l] != 0)
-    {l++;}
-    l++; count--;
-   }
+   if(top == -1)
+   {answer[i] = 0;}
+   else
+   {answer[i] = monoStack[top]-i;}
+
+   monoStack[++top] = i;
+   i--;
   }
-  
-  return maxOnes;
+
+  return answer;
  }
 }
