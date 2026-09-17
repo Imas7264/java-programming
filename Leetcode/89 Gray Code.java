@@ -33,6 +33,7 @@ class Solution
 
 
 
+// Optimal but has significant overhead due to the addition of Integer and int, and accessing the element from the ArrayList
 // class Solution
 // {
 //  public List<Integer> grayCode(int n)
