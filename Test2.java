@@ -10,24 +10,7 @@ class Test2
   // for(int i: obj.dailyTemperatures(arr))
   // {System.out.print(i+" ");}
 
-  System.out.println(obj.grayCode(3));
- }
-}
-
-
-
-class Solution
-{
- public List<Integer> grayCode(int n)
- {
-  List<Integer> gray = new ArrayList<>(1<<n);
-
-  for(int i=0; i<(1<<n); i++)
-  {
-   gray.add((i^(i>>1)));
-  }
-
-  return gray;
+  System.out.println(obj.maxVowels("leetcode", 3));
  }
 }
 
@@ -35,26 +18,35 @@ class Solution
 
 // class Solution
 // {
-//  public List<Integer> grayCode(int n)
+//  public int maxVowels(String s, int k)
 //  {
-//   List<Integer> gray = new ArrayList<>(1<<n);
-//   gray.add(0);
-//   gray.add(1);
+//   int count=0, maxCount=0, l=0, h=0;
 
-//   if(n == 1)
-//   {return gray;}
-
-//   gray.add(3);
-//   gray.add(2);
-
-//   for(int i=3; i<=n; i++)
+//   while(h<k && h<s.length())
 //   {
-//    int add = 1<<(i-1);
+//    char c = s.charAt(h);
+//    if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+//    {count++;}
 
-//    for(int j=gray.size()-1; j>=0; j--)
-//    {gray.add(gray.get(j)+add);}
+//    h++;
+//   }
+//   maxCount=count;
+
+//   while(h<s.length())
+//   {
+//    char c = s.charAt(l);
+//    if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+//    {count--;}
+//    l++;
+
+//    c = s.charAt(h);
+//    if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+//    {count++;}
+//    h++;
+
+//    maxCount = (count>maxCount)? count : maxCount;
 //   }
 
-//   return gray;
+//   return maxCount;
 //  }
 // }
