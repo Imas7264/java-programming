@@ -10,7 +10,7 @@ class Test2
   // for(int i: obj.dailyTemperatures(arr))
   // {System.out.print(i+" ");}
 
-  System.out.println(obj.wordPattern("abba", "dog cat cat dog"));
+  System.out.println(obj.isValid("([)]"));
  }
 }
 
@@ -18,31 +18,64 @@ class Test2
 
 class Solution
 {
- public boolean wordPattern(String pattern, String s)
+ public boolean isValid(String s1)
  {
-  String arr[] = s.split(" ");
-  int n = pattern.length(), m = arr.length;
-  
-  if(n != m)
+  int n = s1.length(), top=-1;
+
+  if(n%2 != 0)
   {return false;}
 
-  HashMap<Character, String> map1 = new HashMap<>(n);
-  HashMap<String, Character> map2 = new HashMap<>(m);
+  char[] stack = new char[n/2];
   char c;
 
   for(int i=0; i<n; i++)
   {
-   c = pattern.charAt(i);
+   c = s1.charAt(i);
 
-   if(map1.containsKey(c) && !map1.get(c).equals(arr[i]))
-   {return false;}
-   else if(map2.containsKey(arr[i]) && map2.get(arr[i]) != c)
-   {return false;}
-   
-   map1.put(c, arr[i]);
-   map2.put(arr[i], c);
+   if(c=='(' || c=='{' || c=='[')
+   {
+    if(top == stack.length-1)
+    {return false;}
+
+    stack[++top] = c;
+   }
+   else
+   {
+    if(top == -1)
+    {return false;}
+
+    switch(c)
+    {
+     case ')':
+     {
+      if(stack[top] != '(')
+      {return false;}
+      top--;
+      break;
+     }
+
+     case '}':
+     {
+      if(stack[top] != '{')
+      {return false;}
+      top--;
+      break;
+     }
+
+     case ']':
+     {
+      if(stack[top] != '[')
+      {return false;}
+      top--;
+      break;
+     }
+    }
+   }
   }
 
-  return true;
+  if(top == -1)
+  {return true;}
+
+  return false;
  }
 }
