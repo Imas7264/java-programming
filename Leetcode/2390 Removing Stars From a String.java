@@ -15,7 +15,7 @@ class Test2
 }
 
 
-
+// Using string constructor to convert part of character array to string is more efficient than using intermediate string builder.
 class Solution
 {
  public String removeStars(String s)
@@ -31,10 +31,31 @@ class Solution
    {top--;}
   }
 
-  StringBuilder sb = new StringBuilder("");
-  for(int i=0; i<=top; i++)
-  {sb.append(stack[i]);}
-
-  return sb.toString();
+  return new String(stack, 0, top+1);
  }
 }
+
+
+
+// class Solution
+// {
+//  public String removeStars(String s)
+//  {
+//   int n = s.length(), top=-1;
+//   char stack[] = new char[s.length()];
+
+//   for(int i=0; i<n; i++)
+//   {
+//    if(s.charAt(i) != '*')
+//    {stack[++top] = s.charAt(i);}
+//    else
+//    {top--;}
+//   }
+
+//   StringBuilder sb = new StringBuilder("");
+//   for(int i=0; i<=top; i++)
+//   {sb.append(stack[i]);}
+
+//   return sb.toString();
+//  }
+// }

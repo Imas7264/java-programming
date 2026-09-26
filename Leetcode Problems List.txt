@@ -38,6 +38,7 @@ New problems:
 258  - Add digits
 274  - H-Index
 283  - Move Zeroes
+290  - Word Pattern
 328  - Odd Even Linked List
 334  - Increasing Triplet Subsequence
 338  - Counting Bits
