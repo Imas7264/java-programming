@@ -10,12 +10,13 @@ class Test2
   // for(int i: obj.dailyTemperatures(arr))
   // {System.out.print(i+" ");}
 
-  System.out.println(obj.reverseParentheses("(abcd)"));
+  System.out.println(obj.reverseParentheses("(a(bc)d)"));
  }
 }
 
 
 
+// Optimal solution traverses the string almost exactly twice and makes use of a teleporter integr array.
 class Solution
 {
  public String reverseParentheses(String s)
@@ -55,7 +56,7 @@ class Solution
 
 
 
-
+// Optimal complexity but requires too many operations and much much extra memory.
 // class Solution
 // {
 //  public String reverseParentheses(String s)
