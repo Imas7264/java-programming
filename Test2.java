@@ -16,45 +16,6 @@ class Test2
 
 
 
-class Solution
-{
- public String reverseParentheses(String s)
- {
-  int n = s.length(), temp;
-  char c;
-  Stack<Integer> stack = new Stack<>();
-  int teleporter[] = new int[n];
-
-  for(int i=0; i<n; i++)
-  {
-   c = s.charAt(i);
-   if(s.charAt(i) == '(')
-   {stack.push(i);}
-   else if(s.charAt(i) == ')')
-   {
-    temp = stack.pop();
-    teleporter[i] = temp;
-    teleporter[temp] = i;
-   }
-  }
-
-  int direction = 1;
-  StringBuilder sb = new StringBuilder("");
-  for(int i=0; i<n; i+=direction)
-  {
-   c = s.charAt(i);
-   if(c == '(' || c == ')')
-   {i = teleporter[i]; direction = -direction;}
-   else
-   {sb.append(c);}
-  }
-
-  return sb.toString();
- }
-}
-
-
-
 
 // class Solution
 // {
