@@ -101,6 +101,7 @@ Homework Problems:
  
 Self Solving Problems:
 7    - Reverse Integer
+9    - Palindrome Number
 28   - Find the Index of the First Occurrence in a String
 383  - Ransom Note
 485  - Max Consecutive Ones
